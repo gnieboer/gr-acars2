@@ -35,7 +35,9 @@ target_link_libraries(gnuradio-acars2 ${Boost_LIBRARIES} ${GNURADIO_RUNTIME_LIBR
 set_target_properties(gnuradio-acars2 PROPERTIES DEFINE_SYMBOL "gnuradio_acars2_EXPORTS")
 
 add_executable(siggen siggen.c)
+if (NOT WIN32)
 target_link_libraries(siggen m)
+endif (NOT WIN32)
 
 ########################################################################
 # Install built library files
